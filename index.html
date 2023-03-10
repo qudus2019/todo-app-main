@@ -14,24 +14,114 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class="ligh">
+  <main>
+    <div class="container">
+      <header>
+        <h1 class="logo">TODO</h1>
+        <div class="theme-toggle-wrapper ligh">
+          <img src="images/icon-sun.svg" alt="sun" class="theme-toggle" id="sun">
+          <img src="images/icon-moon.svg" alt="moon" class="theme-toggle" id="moon">
+        </div>
+      </header>
 
-  Todo
+      <div class="content">
+        <div class="new-todo-wrapper">
+          <div class="circle"></div>
+          <form action="#">
+            <input type="text" 
+            name="new-todo" 
+            placeholder="Create a new todo..."
+            id="new-todo">
+          </form>
+        </div>
 
-  <!-- Add dynamic number --> items left
+       <div class="todos">
+        <div class="todo completed">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">Complete online JavaScript course.</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+        <div class="todo">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img  src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">Jog around the park 3x.</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+        <div class="todo">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">10 minutes meditation</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+        <div class="todo">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">Read for 1 hour</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+        <div class="todo">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">Pick up groceries.</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+        <div class="todo">
+          <div class="circle">
+            <div class="check-wrapper">
+              <img src="images/icon-check.svg" alt="check">
+            </div>
+          </div>
+          <div class="wrap">
+          <p class="todo-content">Complete the Todo App on Frontend mentor</p>
+          <img src="images/icon-cross.svg" alt="" class="cross"></div>
+        </div>
+       </div>
+        <footer>
+    <p class="items-left">
+      <span class="number">4</span>
+      <span>items left</span>
+    </p>
 
-  All
-  Active 
-  Completed
+    <div class="filters">
+      <span class="filter">All</span>
+      <span class="filter">Active</span>
+      <span class="filter">Completed</span>
+    </div>
+    <p class="clear">Clear completed</p>
+  </footer>
+      </div>
+      <p class="reorder"> Drag and drop to reorder list</p>
+    </div>
+  </main>
 
-  Clear Completed
-
-  Drag and drop to reorder list
-
+  
+<!--
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="#">Abdul Sanusi</a>.
+  </div>-->
   <script src="script.js"></script>
 </body>
 </html>
