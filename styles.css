@@ -277,7 +277,9 @@ p.reorder{
 }
 
 @media screen and (max-width:600px){
-
+body{
+    font-size: 15px;
+}
     .filters{
         position:absolute;
         bottom:-80px;
