@@ -289,17 +289,18 @@ p.reorder{
         justify-content: center;
         width:500px;
         max-width:88vw;
-        right:4%;
+        left:50%;
+        transform:translateX(-50%);
         border-radius: 7px;
     }
-
-
 
     .reorder{
         position:absolute;
         bottom:-190px;
         z-index: 1000;
-        left:20%;
+        left:50%;
+        transform:translate(-50%);
+        width:100%;
     }
 }
 
