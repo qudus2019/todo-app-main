@@ -5,9 +5,52 @@ let todos = document.querySelector('.todos');
 let remainingActiveTodo = document.querySelector('.number');
 let alltodo = [...document.querySelectorAll('.todo')];
 
+let body = document.querySelector('body').classList.add(localStorage.getItem('theme'));
+
+let todosObj = {
+    todos: {},
+    theme : ''
+};
+
+let parsedTodos = JSON.parse(localStorage.getItem('todos'));
+let theme = localStorage.getItem('theme');
+
+if(parsedTodos){
+    let todosArr = Object.values(parsedTodos.todos);
+    todosArr.forEach((each, index) => {
+        let newTodo = document.createElement('div');
+    newTodo.className = 'todo';
+
+    newTodo.innerHTML = `<div class="circle">
+    <div class="check-wrapper">
+      <img src="images/icon-check.svg" alt="check">
+    </div>
+  </div>
+  <div class="wrap">
+  <p class="todo-content">${parsedTodos.todos[0]}</p>
+  <img src="images/icon-cross.svg" alt="" class="cross"></div>`;
+  todos.appendChild(newTodo);
+  e.target.value = '';
+  remainingActiveTodo.textContent = getActiveTodos();
+
+  alltodo.push(newTodo);
+    })
+    
+}
+
 
 toggle.addEventListener('click', e => {
-    document.querySelector('body').classList.toggle('light');
+
+    let body = document.querySelector('body');
+    let theme;
+    body.classList.toggle('light');
+    if(body.classList.contains('light')){
+       theme = 'light';
+    }else{
+        theme = 'ligh';
+    }
+
+    localStorage.setItem('theme', theme);
 })
 
 // crosses.forEach(cross => {
