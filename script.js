@@ -4,8 +4,8 @@ let inputEl = document.querySelector('#new-todo');
 let todos = document.querySelector('.todos');
 let remainingActiveTodo = document.querySelector('.number');
 let alltodo = [...document.querySelectorAll('.todo')];
-
 let body = document.querySelector('body').classList.add(localStorage.getItem('theme'));
+let no_todo = document.querySelector('.no-todo');
 
 let todosObj = {
     todos: {},
@@ -74,12 +74,13 @@ todos.addEventListener('click', e => {
             todos.removeChild(todo);
             alltodo.pop(todo)
         },300);
-
+        checkTodo();
       
         
     }
 
     remainingActiveTodo.textContent = getActiveTodos() - 1;
+    
 })
 
 todos.addEventListener('click', e => {
@@ -108,6 +109,8 @@ inputEl.addEventListener('blur', e => {
 
     if(inputtedText != ''){
     //console.log('The inputted todo is: ', inputtedText);
+    
+    no_todo.style.display = 'none';
 
     let newTodo = document.createElement('DIV');
     newTodo.className = 'todo';
@@ -252,3 +255,19 @@ alltodo.forEach((eachTodo, ind) => {
         console.log(`Dragging over todo number ${ind + 1}`)
     })
 })
+
+function checkTodo(){
+    let todosNum = todos.querySelectorAll('.todo').length;
+    //console.log(todos);
+
+    if(todosNum === 1){
+       console.log('here is ' , no_todo)
+       no_todo.style.display = 'flex';
+    } else{
+       
+        console.log( no_todo , 'not here')
+        //no_todo.style.color = 'green';
+        no_todo.style.display = 'none';
+
+    }
+}

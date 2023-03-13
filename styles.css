@@ -92,7 +92,7 @@ main{
 }
 
 .container{
-    width:500px;
+    width:550px;
     max-width:90%;
     
     utline:2px solid red;
@@ -138,7 +138,7 @@ header{
     align-items: center;
     background: var(--Very-Dark-Desaturated-Blue);
     height:60px;
-    padding:10px 20px;
+    padding:10px 30px;
     border-radius:8px;
 }
 
@@ -178,12 +178,12 @@ form{
 
 .todos{
     outline:px solid red;
-    border-radius: 7px;
+    border-radius: 5px;
     overflow: hidden;
     margin: 20px auto;
     margin-bottom:3px;
     display:grid;
-    gap:3px;
+    gap:2px;
     overflow-x: hidden;
 }
 
@@ -191,9 +191,10 @@ form{
     display:flex;
     background-color: var(--Very-Dark-Desaturated-Blue);
     align-items:center;
-    padding:10px 20px;
+    padding:10px 30px;
     height:65px;
     transition:1.4s;
+    border-bottom: 2px solid;
 }
 
 .check-wrapper{
@@ -276,6 +277,17 @@ p.reorder{
     padding:40px;
 }
 
+.no-todo{
+    height:55px;
+    width: 100%;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Very-Dark-Desaturated-Blue);
+    display:non;
+}
+
 @media screen and (max-width:600px){
 body{
     font-size: 15px;
@@ -289,8 +301,8 @@ body{
         max-width:100%;
         align-items:center;
         justify-content: center;
-        width:500px;
-        max-width:88vw;
+        width:550px;
+        max-width:90vw;
         left:50%;
         transform:translateX(-50%);
         border-radius: 7px;
