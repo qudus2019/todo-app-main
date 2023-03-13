@@ -105,7 +105,6 @@ todos.addEventListener('click', e => {
 
         if(todo.classList.contains('completed')){
             todo.classList.remove('completed');
-            todosObj[]
         }else{
             todo.classList.add('completed');
 
