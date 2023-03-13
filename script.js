@@ -7,34 +7,47 @@ let alltodo = [...document.querySelectorAll('.todo')];
 let body = document.querySelector('body').classList.add(localStorage.getItem('theme'));
 let no_todo = document.querySelector('.no-todo');
 
-let todosObj = {
-    todos: {},
-    theme : ''
-};
+let todosObj = {};
+
+for(let prop in todosObj){
+    console.log(todosObj[prop].text)
+}
+
+console.log('first todo in todosObj is:', todosObj.one)
+// let dot = JSON.stringify(todosObj);
+// console.log(dot)
+// let dos = JSON.parse(dot);
+// console.log(dos)
 
 let parsedTodos = JSON.parse(localStorage.getItem('todos'));
+//console.log(parsedTodos)
 let theme = localStorage.getItem('theme');
 
 if(parsedTodos){
-    let todosArr = Object.values(parsedTodos.todos);
-    todosArr.forEach((each, index) => {
-        let newTodo = document.createElement('div');
-    newTodo.className = 'todo';
+    no_todo.style.display = 'none';
+   console.log('todo is present in local storage');
+    for(let todo in parsedTodos){
+       // console.log(todo)
+      let  inputtedText =  parsedTodos[todo].text;
+        let todoClass = parsedTodos[todo].class;
 
-    newTodo.innerHTML = `<div class="circle">
-    <div class="check-wrapper">
-      <img src="images/icon-check.svg" alt="check">
-    </div>
-  </div>
-  <div class="wrap">
-  <p class="todo-content">${parsedTodos.todos[0]}</p>
-  <img src="images/icon-cross.svg" alt="" class="cross"></div>`;
-  todos.appendChild(newTodo);
-  e.target.value = '';
-  remainingActiveTodo.textContent = getActiveTodos();
+        let newDiv = document.createElement('DIV');
+        newDiv.className = 'todo';
+        newDiv.classList.add(todoClass)
+        newDiv.innerHTML = `<div class="circle">
+        <div class="check-wrapper">
+          <img src="images/icon-check.svg" alt="check">
+        </div>
+      </div>
+      <div class="wrap">
+      <p class="todo-content">${inputtedText}</p>
+      <img src="images/icon-cross.svg" alt="" class="cross"></div>`;
+      todos.appendChild(newDiv)
+    }
 
-  alltodo.push(newTodo);
-    })
+    
+}else{
+    console.log('todo is absent in local storage');
     
 }
 
@@ -92,6 +105,7 @@ todos.addEventListener('click', e => {
 
         if(todo.classList.contains('completed')){
             todo.classList.remove('completed');
+            todosObj[]
         }else{
             todo.classList.add('completed');
 
@@ -131,6 +145,22 @@ inputEl.addEventListener('blur', e => {
   remainingActiveTodo.textContent = getActiveTodos();
 
   alltodo.push(newTodo);
+
+  let index = document.querySelectorAll('.todo').length;
+
+  
+  todosObj[index] = {
+    text : inputtedText,
+    class : 'incomplete',
+    dataCount : index + 1
+  }
+
+  console.log(todosObj)
+
+  localStorage.setItem('todos', JSON.stringify(todosObj));
+//   todosObj.push(newTodo);
+//   localStorage.setItem('todos',todosObj);
+//   console.log(JSON.parse(localStorage.getItem('todos')))
 
     }else{
         //console.log('Inputted text is empty')
@@ -271,3 +301,4 @@ function checkTodo(){
 
     }
 }
+
