@@ -4,19 +4,42 @@ const toggle = document.querySelector(".theme-toggle-wrapper");
 let crosses = document.querySelectorAll(".cross");
 let inputEl = document.querySelector("#new-todo");
 let todos = document.querySelector(".todos");
+const circleBtn = document.querySelector(".circle");
 let remainingActiveTodo = document.querySelector(".number");
 let alltodo = [...document.querySelectorAll(".todo")];
+const messageBox = document.querySelector(".message-box-hide");
 let body = document
   .querySelector("body")
   .classList.add(localStorage.getItem("theme"));
 let no_todo = document.querySelector(".no-todo");
 
 let todosObj = {};
-
+let inputtedText;
 for (let prop in todosObj) {
   console.log(todosObj[prop].text);
 }
+function MessageToDisplay(response) {
+  messageBox.textContent = response.message;
+  messageBox.classList.add("message-box-show");
+  messageBox.style.background = `var(--${response.bgColor})`;
+  setTimeout(() => {
+    messageBox.classList.remove("message-box-show");
+  }, 3000);
+  inputtedText = "";
+  return inputtedText;
+}
+circleBtn.addEventListener("click", () => {
+  let SuccessMsg = {
+    message: "Congratulations! todo added.",
+    bgColor: "Success-Bg-Color",
+  };
+  let errMsg = {
+    message: "Ahh shot! todo is empty.",
+    bgColor: "error-Bg-Color",
+  };
 
+  inputtedText ? MessageToDisplay(SuccessMsg) : MessageToDisplay(errMsg);
+});
 console.log("first todo in todosObj is:", todosObj.one);
 // let dot = JSON.stringify(todosObj);
 // console.log(dot)
@@ -79,7 +102,6 @@ toggle.addEventListener("click", (e) => {
 todos.addEventListener("click", (e) => {
   if (e.target.className == "cross") {
     let cross = e.target;
-    //console.log(cross);
     let todo = cross.parentElement.parentElement;
     todo.classList.add("remove");
     setTimeout(function () {
@@ -110,7 +132,7 @@ todos.addEventListener("click", (e) => {
 });
 
 inputEl.addEventListener("blur", (e) => {
-  let inputtedText = e.target.value;
+  inputtedText = e.target.value;
 
   if (inputtedText != "") {
     //console.log('The inputted todo is: ', inputtedText);
