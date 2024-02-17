@@ -1,46 +1,72 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
-  <title>Frontend Mentor | Todo app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body class="ligh">
-  <main>
-    <div class="container">
-      <header>
-        <h1 class="logo">TODO</h1>
-        <div class="theme-toggle-wrapper ligh">
-          <img src="images/icon-sun.svg" alt="sun" class="theme-toggle" id="sun">
-          <img src="images/icon-moon.svg" alt="moon" class="theme-toggle" id="moon">
-        </div>
-      </header>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="ligh">
+    <main>
+      <div class="container">
+        <header>
+          <h1 class="logo">TODO</h1>
+          <div class="theme-toggle-wrapper ligh">
+            <img
+              src="images/icon-sun.svg"
+              alt="sun"
+              class="theme-toggle"
+              id="sun"
+            />
+            <img
+              src="images/icon-moon.svg"
+              alt="moon"
+              class="theme-toggle"
+              id="moon"
+            />
+          </div>
+        </header>
+        <div class="message-box-hide">Congratulations! todo added.</div>
 
-      <div class="content">
-        <div class="new-todo-wrapper">
-          <div class="circle"></div>
-          <form action="#">
-            <input type="text" 
-            name="new-todo" 
-            placeholder="Create a new todo..."
-            id="new-todo">
-          </form>
-        </div>
+        <div class="content">
+          <div class="new-todo-wrapper">
+            <div class="circle"></div>
+            <form action="#">
+              <input
+                type="text"
+                name="new-todo"
+                placeholder="Create a new todo..."
+                id="new-todo"
+              />
+            </form>
+          </div>
 
-       <div class="todos">
-        <div class="no-todo">
-          <p>You have no todo...</p>
-        </div>
-        <!--
+          <div class="todos">
+            <div class="no-todo">
+              <p>You have no todo...</p>
+            </div>
+            <!--
         <div class="todo completed" draggable="true">
           <div class="circle">
             <div class="check-wrapper">
@@ -102,29 +128,29 @@
           <img src="images/icon-cross.svg" alt="" class="cross"></div>
         </div>
         -->
-       </div>
-        <footer>
-    <p class="items-left">
-      <span class="number">0</span>
-      <span>items left</span>
-    </p>
+          </div>
+          <footer>
+            <p class="items-left">
+              <span class="number">0</span>
+              <span>items left</span>
+            </p>
 
-    <div class="filters">
-      <span class="filter selected">All</span>
-      <span class="filter">Active</span>
-      <span class="filter">Completed</span>
-    </div>
-    <p class="clear">Clear completed</p>
-  </footer>
+            <div class="filters">
+              <span class="filter selected">All</span>
+              <span class="filter">Active</span>
+              <span class="filter">Completed</span>
+            </div>
+            <p class="clear">Clear completed</p>
+          </footer>
+        </div>
+        <p class="reorder">Drag and drop to reorder list</p>
       </div>
-      <p class="reorder"> Drag and drop to reorder list</p>
-    </div>
-  </main>
-<!--
+    </main>
+    <!--
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Abdul Sanusi</a>.
   </div>-->
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
